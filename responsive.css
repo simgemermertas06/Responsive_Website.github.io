@@ -1,0 +1,477 @@
+/* font-family: 'PT Sans', sans-serif;
+   font-family: 'Raleway', sans-serif;
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body{
+    font-size: 16px;  /* Varsayılan font-size (1 em = 16 px) */
+    font-family: 'PT Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+.wrapper{
+    width: 100%;
+}
+.banner{
+    width: 100%;
+    height: 100vh; /* Referans olarak ekranın yüksekliğini alır.(vh=yükseklik birimi) */
+    background-position: center center; /* Üstten-sağdan-soldan ekranın ortasında olsun */
+    background: url("images/dark_tint.png"),url("images/bokeh_car_lights_bg.jpg"); /* İlk resim üstte görünen filtre sayılabilir. */
+    background-size: cover; /* Arka plan ekranı tam kaplasın */
+    position: relative;  /* İçteki header div'ini konumlandırmak için */
+    box-sizing: border-box; /* Padding olursa taşmayı engellemek için */
+    display: flex;
+    text-align: center;   /* Yatayda ortala */
+    align-items: center;  /* Dikeyde ortala */
+    justify-content: center;
+}
+header{
+    position: absolute; /* Banner ile Header alanı iç içe olduğundan header alanını düzenlemek için. */
+    margin: 0 auto; /* Kendini ortalasın */
+    width: 100%;
+    align-self: flex-start; /* Üst tarafa kendini konumlandırsın. */
+}
+header h1{
+    position: absolute;
+    font-size: 24px; /* 1em=16px demiştik */
+    left: 30px;
+    margin-top: 30px;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    float: left;
+}
+header nav.menu ul{ /* MENU'nun İÇİNDE YER ALACAĞI KUTU OLARAK DÜŞÜN */
+    position: absolute;
+    float: right; /* Ekranın sağına yasla. */
+    right: 20px;
+    top: 0px;
+} 
+header nav.menu ul li{
+    display: block; /* menu'ler başta otomatik alt alta geldiğinden onları yan yana getireceğiz. */
+    padding: 30px;  /* üstten alttan sağdan soldan 30px boşuk kalsın. */
+    float: left;    /* bir üstte tanımlanan "ul ETİKETİ İÇİNDE" (kutu içinde) sola hizalansınlar  */
+}
+header nav.menu ul li a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #d8d8d8;
+    font-weight: 500;
+}
+header nav.menu ul li a:hover{
+    color: white;
+    transition: color 0.2 ease-in-out; /* "0.2sn içinde,yavaş şekilde,renk beyaz olsun" */
+}
+.banner .slider h2{
+    color: white;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+.banner .slider p{
+    font-size: 24px;
+    color: white;
+    line-height: 24px;
+    margin-bottom: 50px;
+}
+.button a{
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    padding: 15px 40px;  /* üstten alttan 15px,sağdan soldan 40px boşluk bırakarak buton halinde getirdik */
+    background: #3cadd4;
+    border-radius: 10px;
+}
+.button a:hover{
+    background: #61c1e1;
+    transition: background-color 0.2 ease-in-out;
+}
+
+                            /*------BOLUM 1------*/
+
+section.bolum1{
+    width: 100%;
+    background: #f5f5f5;
+    padding: 100px 0; /*ÜSTTEN-ALTTAN 100px boşluk*/
+    text-align: center; /*YATAYDA ORTALA*/
+
+}
+.bolum1 h2{
+    color: #474747;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1em;
+    margin-bottom: 0.5em;
+}
+.bolum1 h2+p{
+    color: #858585;
+    font-size: 24px;
+    margin-bottom: 0.5em ;
+}
+.container{   /* KUTULARIN İÇİNDE OLACAĞI ALAN */
+    max-width: 1000px;  /* DARALMA OLDUĞUNDA KAYDIRMA ÇUBUĞU ÇIKMASINI ENGELLEDİK */
+    margin: 0 auto;   /* Wrapper içinde(yatayda) ortalanır */
+    display: flex;   /* İçerideki 3 kutunun düzgün yerleşebilmesi için flex kullandık */
+    justify-content: space-between; /* İki yana hizalandı */
+    flex-wrap: wrap;  /* Sığmadığı zaman alta kalsın */
+}
+.container .kutu{
+    flex-basis: 300px; /* Genişlik tanımladık */
+    flex-shrink: 0;   /* kutuların daralmasını engelledik(min. 300px'e kadar daralacak. */
+    flex-grow: 1;  /* Yeteri alan varsa container içinde genişlemesini sağladık */
+    background: #ebe6e6;
+    text-align: center;
+    padding: 20px 0;
+    margin-right: 20px;
+    align-items: stretch; /* kutuların uzunluğu eşit oldu. */
+    border-radius: 10px;
+}
+.bolum1 .kutu:nth-last-child(1){
+    margin-right: 0; /* Sağdaki boşluğu sıfırladık */
+}
+.bolum1 .kutu i{  /* iconlar Normal karakter gibi kullanılabilir.*/
+    font-size: 32px;
+    padding: 40px;      /* iconun etrafındaki boşluklar */
+    border-radius: 50%; /* padding'i çevreleyen kutunun kenarları */
+    color: white;
+}
+.bolum1 .kutu i.first{ /* Burada neler değişecek? */
+    background: #3cadd4;
+}
+.bolum1 .kutu i.second{ /* Burada neler değişecek? */
+    background: #add43c;
+}
+.bolum1 .kutu i.third{ /* Burada neler değişecek? */
+    background: #d43c61;
+}
+.bolum1 .kutu h3{
+    margin: 20px 0;
+    color: #858585;
+    font-size: 24px;
+    font-weight: 700px;
+}
+.bolum1 .kutu p{
+    padding: 0 30px 20px 30px; /* üst-sağ-alt-sol (bir üstte h3'alttan 20px boşluk verdiğimiz için burada p'ye üstten boşluk vermeye gerek yok */
+    color: #858585;
+    font-size: 16px;
+    font-weight: 100px;
+    line-height: 24px;
+}
+
+                            /*------BOLUM 2------*/
+
+section.bolum2{
+    width: 100%; /* genişlik wrapper kadar */
+    background: white;
+    border-top: 1px solid #d1d1d1; /* bölümün üzerindeki çizgi (1px yükseklğinde - düz çizgi halinde - renk */
+    box-sizing: border-box;  /* İçeri doğru bir genişleme yaptık.  */
+    text-align: center;  /* İçerde yazı ve nesneler yatayda ortalasın */
+    padding-top: 80px; /* Üstten boşluk */
+    display: block; /* yazılmazsa bir şey değişmiyor */
+}
+.bolum2 h2{
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #474747;
+    font-weight: 700px;
+}
+.bolum2 h2+p{
+    font-size: 24px;
+    margin-bottom: 80px;
+    color: #858585;
+}
+
+/* NOT: container'ı bir üst bölümde biçimlendirdiğimiz için burada tekrar biçimlendirmeye gerek yok. */
+
+.bolum2 .kisiler{
+    width: 100%; /* wrapper değil,container genişliği kadar */
+    border-top: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1; /* üstteki çizginin aynısını aşağıya da ekledik. */
+    display: flex;/* "kisi" kutularının daha rahat hizalanması ve alt alta kaymalarını esnek hale getirmek için */
+    justify-content: space-between; /* kutuları iki yana hizala */
+    flex-wrap: wrap;/* ekran daraldığında alta kayması için */
+}
+.bolum2 .kisi{
+    flex-basis: 220px; /* 220px altına düşünce alta doğru kaysınlar */
+    flex-grow: 1;  /* Yeteri alan varsa container içinde genişlemesini sağladık */
+    margin: 50px 10px;
+    text-align: left; /* İçerideki yazılar sola hizalansın */
+}
+.bolum2 .kisi img{
+    float: left; /* resimler sola hizalansın */
+    width: 100px;
+    border-radius: 50%;
+    margin: 5px 10px; /* resim etrafındaki boşluklar */
+}
+.bolum2 .kisi h4{
+    margin-top: 25px;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.bolum2 .kisi p{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.bolum2 article{
+    margin: 50px auto; /* sağdan-soldan otomatik olsun ki ortalansın. */
+    width: 70%; /* Biraz daha ortada toplanabilsinler. */
+}
+.bolum2 article p{
+    font-size: 16px;
+    line-height: 24px;
+    color: #444;
+}
+.bolum2 ul li a{
+    margin-top: 30px;
+    background: #3cadd4;
+    border-radius: 30px;
+    border: 0;  /* etrafında kenarlık kalmasın. */
+    cursor: pointer;    /* ÜZERİNDE FARE İLE GELİNDİĞİNDE "EL" İŞARETİ OLSUN */
+    display: inline-block;
+    font-weight: 400px;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+.bolum2 ul li a:hover{
+    background: #61c1e1;
+    transition: background-color 0.2 ease-in-out; /* "0.2sn içinde,yavaş şekilde,renk değişsin" */
+}
+
+                            /*------BOLUM 3------*/
+
+.bolum3{
+    width: 100%;
+    display: block;
+    background: #3cadd4;
+    padding: 70px 0 10px;
+    text-align: center;
+}
+.bolum3 h2{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 48px;
+    color: white;
+    margin-bottom: 20px;
+}
+.bolum3 h2+p{
+    font-size: 20px;
+    color: white;
+    letter-spacing: 2px; /* harfler arası boşluk*/
+}
+.bolum3 .container .form{ /* container'ı daha önce biçimlendirdik */
+    width: 600px;
+    margin: 70px auto; /* üst-alt 70px, sağ ve sol otomatik ortalansın*/
+}
+.bolum3 .container .form input[type=text]{ /* htmlde input "type" ile beraber kullanılır. */
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: none; /* kenarlık olmasın */
+    padding: 3px 10px;
+    color: #444;
+    font-size: 16px;
+}
+.bolum3 .container .form input[type=email]{ /* htmlde input "type" ile beraber kullanılır. */
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: none; /* kenarlık olmasın */
+    padding: 3px 10px;
+    color: #444;
+    font-size: 16px;
+}
+.bolum3 .container .form textarea{
+    width: 425px;  /* input'ların genişliği 200'er px ve sağ sol(padding) genişlikleri de 10px ise yaklaşık textarea genişliği 425px diyebiliriz. */
+    height: 150px;
+    padding: 3px 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-top: 20px; 
+}
+.bolum3 .container .form input[type=submit]{
+    margin-top: 70px;
+    font-size: 18px;
+    padding: 15px 50px;
+    background: #383b43;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;  /* imleç üzerine geldiğinde el işaretine dönüşsün */
+}
+.bolum3 .container .form input[type=submit]:hover{
+    background: #4c4c4c;
+    transition: background-color 0.2s ease-in-out;
+}
+
+                            /*------FOOTER------*/
+
+footer{
+    width: 100%;
+    background: #383b43;
+    padding: 30px 0;
+}
+footer .container{
+    margin-top: 55px;
+    border-bottom: 1px solid #979797;
+    padding-bottom: 30px;
+}
+footer.footerbox{
+    width: 200px;
+    margin-left: 20px;
+    margin-bottom: 150px;
+}
+footer h3{
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+footer.container ul{
+    display: block;
+    width: 100%;
+    float: left;
+    margin-bottom: 30px;
+}
+footer .container ul a{
+    color: #cdced0;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+footer .container ul a:hover{
+    text-decoration: underline;
+    transition: 0,9 ease-in-out;
+}
+.social{
+    max-width: 1000px; /*Ekran küçüldüğünde o da daralsın*/
+    margin: 0 auto;    /* ortalansın */
+}
+footer.lisans{
+    width: 100%;
+    margin: 20px auto;
+}
+footer .lisans p{
+    color: #cdced0;
+    float: left;
+    margin-top: 30px;
+}
+footer .icons{
+    float: right;
+    margin-top: 15px;
+}
+footer .icons i{
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer; /*üzerinde gelince el işareti çıksın*/
+    color: white;
+}
+.temizle{
+    clear: both; /* float özelliği kullanıldığında belirli alan aşağı kadar gelmeyebiliyor.Bunu çözmek için bu kodu kullanıyoruz. */
+}
+footer .icons i.facebook {
+	background: #39599f;
+}
+footer .icons i.twitter {
+
+	background: #2daae4;
+}
+footer .icons i.linkedin {
+
+	background: #31516a;
+}
+
+                            /*------MEDIA SORGULARI (TABLET İÇİN) ------*/
+
+@media screen and (max-width:980px) {
+    .banner{
+        height: 60vh;
+    }
+    .banner .slider h2{
+        font-size: 32px;
+    }
+    .banner .slider p{
+        font-size: 16px;
+    }
+    .button a{
+        font-size: 18px;
+        padding: 10px 25px;
+        border-radius: 15px; 
+    }
+    .container .kutu{
+        flex-basis: 100%; /* Tam ekranı kaplasın */
+    }
+    .bolum2 .kisi{
+        flex-basis: 40%; /* Kutular iki iki yan yana dursun */
+    }
+    footer .footerbox{
+        flex-basis: 40%;
+        margin: 10px 20px; /* sola yapışmasını önledik*/
+    }
+}
+
+                            /*------MEDIA SORGULARI (TELEFON İÇİN) ------*/
+
+
+@media screen and (max-width:600px){
+    .bolum2 .kisi{
+        flex-basis: 100%; /* Kutular tam genişliği sağlayıp alt alta dursun */
+        text-align: center;
+    }
+    .bolum2 .kisi img{
+        text-align: center;
+        float: none;  /* Başta sola yaslıydı onu iptal ettik */
+    }
+    footer .footerbox{
+        flex-basis: 100%; /* Alt alta kaysınlar */
+        margin: 10px 20px; /* sola yapışmasını önledik*/
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    footer .icons{
+        clear: both; /* Önceden aynı satırdalardı şimdi alt kaymaları gerek. */
+        float: none;
+    }
+    footer .lisans p{
+        float: none;
+        margin: 20px auto;
+    }
+    .social{
+        text-align: center;
+    }
+    footer .icons i{
+        margin-top: 20px;
+    }
+    .bolum3 .container .form{
+        width: 100%;
+        margin: 70px auto;
+    }
+    .bolum3 .container .form input[type=text] {
+        width: 80%;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    .bolum3 .container .form input[type=email]{
+        width: 80%;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    .bolum3 .container .form textarea{
+        width: 80%;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .bolum3 .container .form input[type=submit]{
+        font-size: 15px;
+        padding: 15px 50px;
+    }
+}
